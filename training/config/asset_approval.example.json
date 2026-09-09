@@ -1,0 +1,16 @@
+{
+  "approved": false,
+  "approval_reference": null,
+  "sdk": "aimdk v1.0.0-ga424add",
+  "usd_sha256": null,
+  "joint_order": [],
+  "reviews": {
+    "joint_axes": false,
+    "inertias": false,
+    "joint_limits": false,
+    "actuator_model": false,
+    "contacts": false,
+    "sensor_frames": false,
+    "initial_pose": false
+  }
+}

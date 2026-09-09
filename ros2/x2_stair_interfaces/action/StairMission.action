@@ -1,0 +1,12 @@
+string mission_id
+string direction
+string stair_profile_id
+---
+bool accepted
+string final_state
+string message
+---
+string state
+float32 progress
+x2_stair_interfaces/StairEstimate stair
+x2_stair_interfaces/SafetyStatus safety

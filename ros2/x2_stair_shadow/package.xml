@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>x2_stair_shadow</name>
+  <version>0.1.0</version>
+  <description>Read-only X2 stair perception observer.</description>
+  <maintainer email="operator@example.com">X2 operator</maintainer>
+  <license>Proprietary</license>
+  <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>sensor_msgs_py</exec_depend>
+  <exec_depend>aimdk_msgs</exec_depend>
+  <exec_depend>x2_stair_interfaces</exec_depend>
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
