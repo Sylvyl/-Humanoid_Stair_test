@@ -1,0 +1,14 @@
+{
+  "approved": false,
+  "approval_reference": null,
+  "robot_serial": null,
+  "firmware": null,
+  "sdk": "aimdk v1.0.0-ga424add",
+  "command_rate_hz": null,
+  "joint_limits_reviewed": false,
+  "stop_matrix_reviewed": false,
+  "onnx_contract_sha256": null,
+  "approved_at": null,
+  "approved_by": null
+}
+

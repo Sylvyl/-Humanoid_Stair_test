@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "lidar_topic": "/aima/hal/sensor/lidar_chest_front/lidar_pointcloud",
+  "imu_topic": "/aima/hal/imu/torso/state",
+  "lidar_frame_approved": false,
+  "imu_frame_approved": false,
+  "scenes": [
+    {
+      "id": "replace-with-scene-name",
+      "start_ns": 0,
+      "end_ns": 0,
+      "expected": {
+        "supported": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+[Unit]
+Description=AgiBot X2 stair learning dashboard (shadow mode)
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/agibot/data/home/agi/x2dev/x2_stair_autonomy/deployment/run-dashboard.sh
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target
+

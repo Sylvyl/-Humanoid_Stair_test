@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "algorithm": "rsl_rl_ppo",
+  "seed": 42,
+  "policy_hz": 50,
+  "teacher": {
+    "observation_group": "privileged_terrain_teacher",
+    "num_envs": 4096,
+    "steps_per_env": 24,
+    "max_iterations": 5000,
+    "learning_rate": 0.0003,
+    "discount_factor": 0.99,
+    "gae_lambda": 0.95,
+    "clip_parameter": 0.2,
+    "entropy_coefficient": 0.01
+  },
+  "student": {
+    "observation_group": "noisy_sensor_student",
+    "teacher_distillation": true,
+    "num_envs": 4096,
+    "steps_per_env": 24,
+    "max_iterations": 3000,
+    "learning_rate": 0.0003
+  },
+  "acceptance": {
+    "held_out_episodes_per_direction": 1000,
+    "minimum_success_rate": 0.95,
+    "all_injected_fault_stops_required": true
+  },
+  "notice": "Hyperparameters are a reviewed job baseline, not vendor actuator values. Full paid training requires separate authorization."
+}

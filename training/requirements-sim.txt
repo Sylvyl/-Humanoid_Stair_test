@@ -1,0 +1,10 @@
+# No GPU is assumed on the local training/validation machine; the CPU-only
+# PyTorch wheel index avoids pulling PyPI's default ~2.5 GB CUDA build. This
+# line adds that index alongside PyPI (so mujoco/onnxruntime/onnx below still
+# resolve normally from PyPI) rather than replacing it.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+mujoco>=3.1
+onnxruntime>=1.17
+onnx>=1.15  # dev/test only: used to author tiny synthetic policies in tests/test_mujoco_closed_loop.py
+torch>=2.2  # ppo_train.py

@@ -1,0 +1,83 @@
+# ---------------------------------------------------------------------------
+# SECRETS / CREDENTIALS -- never commit these.
+#   config/operator-token   : dashboard login token, generated on first run
+#   config/vendor_approval.json : real signed approval (only .example is tracked)
+#   config/tls/             : TLS private keys + certificates
+# ---------------------------------------------------------------------------
+config/operator-token
+config/vendor_approval.json
+config/tls/
+*.pem
+*.key
+*.crt
+*.p12
+.env
+.env.*
+secrets.json
+
+# ---------------------------------------------------------------------------
+# REAL HARDWARE EVIDENCE -- machine/robot-specific output, and files that end up
+# holding real people's names (operator / spotter sign-off). Regenerate locally;
+# only the *.example.json templates belong in version control.
+# ---------------------------------------------------------------------------
+validation/pc2_compatibility.json
+validation/perception_report.json
+validation/simulation_report.json
+validation/onnx_report.json
+validation/hardware_stages.json
+validation/*.bag
+validation/bags/
+
+# ---------------------------------------------------------------------------
+# TRAINING ARTIFACTS -- large binaries, regenerable by re-running training.
+# ---------------------------------------------------------------------------
+training/runs/
+training/runs.json
+training/artifacts/
+*.onnx
+*.pt
+*.pth
+*.ckpt
+*.npz
+
+# ---------------------------------------------------------------------------
+# ROS / rosbag recordings
+# ---------------------------------------------------------------------------
+*.db3
+*.mcap
+metadata.yaml
+
+# ---------------------------------------------------------------------------
+# Vendor SDK -- AgiBot AimDK is proprietary and is referenced via the
+# AIMDK_SDK_ROOT environment variable. It must never be copied into this repo.
+# ---------------------------------------------------------------------------
+aimdk*/
+*aimdk*artifacts*/
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------------------------------------------------------------------------
+# Editors / OS / logs / rendered media
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+*.log
+*.gif
+*.mp4

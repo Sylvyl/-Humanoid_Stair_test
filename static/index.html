@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>X2 Stair Lab</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">AGIBOT X2 ULTRA · AIMDK 1.0</p>
+      <h1>Stair Lab</h1>
+    </div>
+    <div class="top-status">
+      <span id="connection" class="pill bad">PC2 OFFLINE</span>
+      <span class="pill shadow">SHADOW MODE · NO COMMAND OUTPUT</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero panel">
+      <div>
+        <p class="eyebrow">CURRENT GATE</p>
+        <h2 id="mission-state">DISCONNECTED</h2>
+        <p id="mission-copy">Waiting for verified sensor telemetry from PC2.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="software-stop" class="stop">SOFTWARE STOP</button>
+        <small>This is not the hardware E-stop.</small>
+      </div>
+    </section>
+
+    <section class="metrics">
+      <article class="metric"><span>Confidence</span><strong id="confidence">—</strong></article>
+      <article class="metric"><span>Direction</span><strong id="direction">—</strong></article>
+      <article class="metric"><span>Riser</span><strong id="riser">—</strong></article>
+      <article class="metric"><span>Tread</span><strong id="tread">—</strong></article>
+      <article class="metric"><span>Width</span><strong id="width">—</strong></article>
+      <article class="metric"><span>Power source</span><strong id="power-source">—</strong></article>
+      <article class="metric"><span>Sensor age</span><strong id="sensor-age">—</strong></article>
+    </section>
+
+    <section class="panel telemetry-panel">
+      <div class="section-head"><div><p class="eyebrow">RELEASE GATE</p><h2>Hardware output remains fail-closed</h2></div><span id="gate-state" class="pill bad">LOCKED</span></div>
+      <div id="gate-blockers" class="blockers"></div>
+    </section>
+
+    <div class="layout">
+      <section class="panel">
+        <div class="section-head">
+          <div><p class="eyebrow">LEARNING PATH</p><h2>Build confidence in order</h2></div>
+          <span id="lesson-count" class="counter">0 / 10</span>
+        </div>
+        <div id="lessons" class="lessons"></div>
+      </section>
+
+      <aside class="stack">
+        <section class="panel">
+          <p class="eyebrow">SAFETY INTERLOCKS</p>
+          <h2>Nothing moves until all pass</h2>
+          <div id="blockers" class="blockers"></div>
+        </section>
+
+        <section class="panel auth-panel">
+          <p class="eyebrow">OPERATOR SESSION</p>
+          <div id="login-box">
+            <label for="token">Token from PC2</label>
+            <div class="row"><input id="token" type="password" autocomplete="off"><button id="login">Unlock</button></div>
+          </div>
+          <div id="controls" hidden>
+            <div class="checks">
+              <label><input id="check-estop" type="checkbox"> Hardware E-stop reachable</label>
+              <label><input id="check-gantry" type="checkbox"> Gantry attached</label>
+              <label><input id="check-spotter" type="checkbox"> Spotter ready</label>
+            </div>
+            <div class="button-grid">
+              <button id="save-checks">Save checklist</button>
+              <button id="arm">Arm shadow mission</button>
+              <button id="start-up">Start ascent</button>
+              <button id="start-down">Start descent</button>
+            </div>
+            <button id="deadman" class="deadman">HOLD TO RUN / HEARTBEAT</button>
+            <button id="disarm" class="secondary">Disarm</button>
+          </div>
+          <p id="notice" class="notice"></p>
+        </section>
+      </aside>
+    </div>
+
+    <section class="panel telemetry-panel">
+      <div class="section-head"><div><p class="eyebrow">INSPECTION</p><h2>Raw state for troubleshooting</h2></div></div>
+      <pre id="raw-state">Loading…</pre>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

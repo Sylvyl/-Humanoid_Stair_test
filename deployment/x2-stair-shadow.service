@@ -1,0 +1,14 @@
+[Unit]
+Description=AgiBot X2 stair shadow observer (no command output)
+After=network-online.target
+
+[Service]
+Type=simple
+Environment=X2_STAIR_CORE=/agibot/data/home/agi/x2dev/x2_stair_autonomy/src
+ExecStart=/agibot/data/home/agi/x2dev/x2_stair_autonomy/deployment/run-shadow.sh
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target
+

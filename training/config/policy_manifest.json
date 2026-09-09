@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "sdk": "aimdk v1.0.0-ga424add",
+  "status": "UNAPPROVED_SHADOW_ONLY",
+  "control_dt_s": 0.02,
+  "command_publish_rate_hz": null,
+  "coordinate_frame": "base_link: x forward, y left, z up",
+  "inputs": [
+    {"name": "joint_position_error", "size": 29, "scale": 1.0},
+    {"name": "joint_velocity", "size": 29, "scale": 0.05},
+    {"name": "projected_gravity", "size": 3, "scale": 1.0},
+    {"name": "base_angular_velocity", "size": 3, "scale": 0.25},
+    {"name": "previous_action", "size": 29, "scale": 1.0},
+    {"name": "velocity_command", "size": 3, "scale": 1.0},
+    {"name": "terrain_height_samples", "size": 48, "scale": 5.0}
+  ],
+  "observation_size": 144,
+  "outputs": [{"name": "joint_position_residual", "size": 29}],
+  "action_size": 29,
+  "joint_order": [
+    "left_hip_pitch_joint", "right_hip_pitch_joint", "waist_yaw_joint",
+    "left_hip_roll_joint", "right_hip_roll_joint", "waist_pitch_joint",
+    "left_hip_yaw_joint", "right_hip_yaw_joint", "waist_roll_joint",
+    "left_knee_joint", "right_knee_joint",
+    "left_shoulder_pitch_joint", "right_shoulder_pitch_joint",
+    "left_ankle_pitch_joint", "right_ankle_pitch_joint",
+    "left_shoulder_roll_joint", "right_shoulder_roll_joint",
+    "left_ankle_roll_joint", "right_ankle_roll_joint",
+    "left_shoulder_yaw_joint", "right_shoulder_yaw_joint",
+    "left_elbow_joint", "right_elbow_joint",
+    "left_wrist_yaw_joint", "right_wrist_yaw_joint",
+    "left_wrist_pitch_joint", "right_wrist_pitch_joint",
+    "left_wrist_roll_joint", "right_wrist_roll_joint"
+  ],
+  "joint_order_source": "AimDK SDK extra/x2_rl_deploy/x2_rl_deploy_controller/config/motion_control.yaml rl_config.seq (see training/x2_stairs/robot_reference.py)",
+  "action_clip": 1.0,
+  "action_scale": null,
+  "vendor_approval_required": true
+}
+

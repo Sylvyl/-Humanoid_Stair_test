@@ -1,0 +1,10 @@
+{
+  "status": "UNAPPROVED",
+  "source_frame": "rgbd_head_front_optical_frame",
+  "target_frame": "base_link",
+  "camera_to_base_4x4": null,
+  "calibrated_at": null,
+  "calibration_rms_m": null,
+  "reviewed_by": null
+}
+
